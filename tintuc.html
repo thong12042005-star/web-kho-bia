@@ -1,0 +1,1437 @@
+<title>Tin tức</title>
+
+    <style>
+
+
+        /* =======================
+           TOÀN BỘ CSS
+           ======================= */
+        /* ================= HEADER ================= */
+/* Ẩn tiêu đề trang Tin tức */
+.archive-header,
+.entry-header,
+.page-title {
+    display: none !important;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#111;
+    color:#fff;
+    z-index:99999;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+/* Ẩn header của Blocksy */
+
+header.site-header,
+#header,
+.ct-header,
+.ct-header-wrap,
+.wp-block-template-part,
+.wp-site-blocks>header,
+header#masthead{
+    display:none!important;
+}
+
+/* Container riêng */
+
+.header-container{
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+
+/* Thanh menu */
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    gap:25px;
+}
+/* Logo */
+
+.logo{
+    color:#ffc107;
+    font-size:20px;
+    font-weight:700;
+    flex-shrink:0;
+}
+
+/* Menu */
+
+nav{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav li{
+    margin:0;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+    font-size:15px;
+}
+
+nav a:hover,
+nav a.active{
+    color:#ffc107;
+    text-decoration:underline;
+    text-underline-offset:12px;
+}
+
+/* Hotline */
+
+.hotline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 25px;
+
+    background:#ffc107;
+
+    color:#000;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    flex-shrink:0;
+
+    transition:.3s;
+}
+
+.hotline:hover{
+
+    background:#d4a017;
+
+    color:#fff;
+
+}
+
+/* Đẩy nội dung xuống */
+
+body{
+
+    margin:0;
+
+    padding-top:60px;
+
+}
+
+/*==================================================
+BANNER
+==================================================*/
+
+.banner{
+    height:400px;
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.45)
+        ),
+        url("http://biacoloa.local/wp-content/uploads/2026/06/kho.jpg")
+        center/cover no-repeat;
+}
+
+.banner-content{
+    width:100%;
+    max-width:1280px;
+    margin:auto;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+
+.banner-left{
+    color:#fff;
+}
+
+.banner-left h1{
+    margin:0 0 20px;
+    font-size:52px;
+    font-weight:700;
+    color:#d4a017;
+}
+
+.banner-left p{
+    margin:0;
+    font-size:18px;
+    color:#fff;
+}
+
+.banner-left a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.banner-left a:hover{
+    color:#ffc107;
+}
+
+.banner-left span{
+    color:#d4a017;
+}
+
+/*==================================================
+NEWS LAYOUT
+==================================================*/
+
+.news-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 320px;
+    gap:40px;
+    margin:50px auto;
+    align-items:start;
+}
+
+#news-list{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/*==================================================
+SEARCH
+==================================================*/
+
+.search-box{
+    margin-bottom:35px;
+}
+
+#searchInput{
+    width:100%;
+    max-width:500px;
+    height:55px;
+    padding:0 22px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    background:#fff;
+    font-size:16px;
+    transition:.3s;
+}
+
+#searchInput:focus{
+    border-color:#d4a017;
+    box-shadow:0 0 8px rgba(212,160,23,.25);
+}
+
+/*==================================================
+SIDEBAR
+==================================================*/
+
+.news-sidebar{
+    position:sticky;
+    top:100px;
+}
+
+.news-sidebar img{
+    width:100%;
+    display:block;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.news-sidebar img:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.sidebar-title{
+    margin-bottom:20px;
+    padding-left:15px;
+    border-left:5px solid #d4a017;
+
+    font-size:22px;
+    font-weight:700;
+    color:#d4a017;
+}
+
+.sidebar-banner{
+    overflow:hidden;
+    border-radius:15px;
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.sidebar-banner img{
+    margin:0;
+    border-radius:0;
+    box-shadow:none;
+}
+
+.sidebar-banner:hover img{
+    transform:scale(1.05);
+}
+
+/*==================================================
+NEWS CARD
+==================================================*/
+
+.news-card{
+    display:flex;
+    min-height:300px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.news-card>a{
+    flex:0 0 420px;
+    overflow:hidden;
+}
+
+.news-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.4s;
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+}
+
+.news-card:hover img{
+    transform:scale(1.05);
+}
+
+.news-card .content{
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:35px;
+}
+
+/*==================================================
+TITLE
+==================================================*/
+
+.news-card h3{
+    margin:0 0 15px;
+
+    font-size:22px;
+    line-height:1.45;
+
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
+}
+
+.news-card h3 a{
+    color:#00843D;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.news-card h3 a:hover{
+    color:#d4a017;
+}
+
+/*==================================================
+DATE
+==================================================*/
+
+.news-card small{
+    display:block;
+    margin-bottom:20px;
+
+    color:#777;
+    font-size:15px;
+}
+
+/*==================================================
+DESCRIPTION
+==================================================*/
+
+.news-card p{
+    margin-bottom:25px;
+
+    line-height:1.8;
+    color:#555;
+
+    display:-webkit-box;
+    -webkit-line-clamp:4;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+/*==================================================
+READ MORE
+==================================================*/
+
+.read-more{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:170px;
+    height:48px;
+
+    background:#d4a017;
+    color:#fff;
+
+    border-radius:30px;
+
+    text-decoration:none;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.read-more:hover{
+    background:#00843D;
+    color:#fff;
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:1200px){
+
+    .products{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .news-layout{
+        grid-template-columns:minmax(0,1fr) 280px;
+    }
+
+    .product-detail{
+        grid-template-columns:420px 1fr;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .top-bar{
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    nav{
+        width:100%;
+        order:3;
+    }
+
+    nav ul{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
+    }
+
+    .banner{
+        height:220px;
+    }
+
+    .banner-left h1{
+        font-size:42px;
+    }
+
+    .news-layout{
+        grid-template-columns:1fr;
+    }
+
+    .news-sidebar{
+        display:none;
+    }
+
+    .news-card{
+        flex-direction:column;
+    }
+
+    .news-card>a{
+        flex:auto;
+        height:320px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-detail{
+        grid-template-columns:1fr;
+    }
+
+    .product-detail img{
+        height:420px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .banner{
+        height:180px;
+    }
+
+    .banner-left h1{
+        font-size:34px;
+    }
+
+    .banner-left p{
+        font-size:16px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product img{
+        height:240px;
+    }
+
+    .news-card .content{
+        padding:24px;
+    }
+
+    .news-card h3{
+        font-size:22px;
+    }
+
+    .read-more{
+        width:100%;
+    }
+
+    #searchInput{
+        width:100%;
+        height:50px;
+    }
+
+    .pagination{
+        flex-wrap:wrap;
+    }
+
+    .zalo-widget{
+        right:15px;
+        bottom:20px;
+    }
+
+    .zalo-button,
+    .phone-button{
+        width:58px;
+        height:58px;
+    }
+
+    .phone-tooltip{
+        display:none;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .logo{
+        font-size:20px;
+        text-align:center;
+    }
+
+    .hotline{
+        width:100%;
+        text-align:center;
+    }
+
+    nav ul{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .banner{
+        height:160px;
+    }
+
+    .banner-left h1{
+        font-size:28px;
+    }
+
+    .banner-left p{
+        font-size:15px;
+    }
+
+    .news-card img{
+        height:220px;
+    }
+
+    .product-detail{
+        padding:20px;
+    }
+
+    .product-detail img{
+        height:300px;
+    }
+
+    .product-info h1{
+        font-size:28px;
+    }
+
+    .product-info .price{
+        font-size:24px;
+    }
+
+}
+
+/*==================================================
+PRODUCT
+==================================================*/
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:25px;
+    margin:50px 0;
+}
+
+.product{
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.product img{
+    width:100%;
+    height:260px;
+    object-fit:contain;
+
+    padding:25px;
+
+    background:#fff;
+
+    transition:.35s;
+}
+
+.product:hover img{
+    transform:scale(1.05);
+}
+
+.product-content{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+
+    padding:22px;
+}
+
+.product h3{
+    margin-bottom:15px;
+
+    min-height:55px;
+
+    font-size:17px;
+    line-height:1.5;
+    color:#333;
+}
+
+.product p{
+    margin-bottom:18px;
+
+    color:#666;
+    line-height:1.8;
+}
+
+.product ul{
+    margin:0 0 20px 18px;
+}
+
+.product li{
+    color:#666;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.product button,
+.product .btn{
+    margin-top:auto;
+
+    width:100%;
+    height:48px;
+
+    border:none;
+    border-radius:30px;
+
+    background:#111;
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.product button:hover,
+.product .btn:hover{
+    background:#00843D;
+}
+
+/*==================================================
+PRODUCT DETAIL
+==================================================*/
+
+.product-detail{
+    display:grid;
+    grid-template-columns:500px 1fr;
+    gap:50px;
+
+    margin:60px 0;
+    padding:40px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+}
+
+.product-detail img{
+    width:100%;
+    height:520px;
+    object-fit:contain;
+}
+
+.product-info h1{
+    margin-bottom:20px;
+
+    color:#333;
+    font-size:34px;
+}
+
+.product-info .price{
+    margin-bottom:25px;
+
+    color:#d4a017;
+    font-size:28px;
+    font-weight:700;
+}
+
+.product-info ul{
+    margin:0 0 25px 20px;
+}
+
+.product-info li{
+    line-height:2;
+}
+
+.product-info .description{
+    margin-bottom:35px;
+
+    color:#555;
+    line-height:1.9;
+}
+
+.product-info .buy-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    width:220px;
+    height:52px;
+
+    border-radius:30px;
+
+    background:#00843D;
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.product-info .buy-btn:hover{
+    background:#d4a017;
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+footer{
+    margin-top:70px;
+    padding:35px 0;
+    background:#111;
+    color:#fff;
+    text-align:center;
+}
+
+.footer-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.btn-footer{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:#00843D;
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.btn-footer:hover{
+    background:#d4a017;
+}
+
+/*==================================================
+PAGINATION
+==================================================*/
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 50px;
+}
+
+.pagination a{
+
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #777;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #0b5b99;
+    font-weight: bold;
+    font-size: 16px;
+    background: white;
+    transition: 0.2s;
+
+}
+
+.pagination a:hover{
+
+    background:#00843D;
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+.pagination a.active{
+    background: #cc2900;
+    color: white;
+    border-color: #cc2900;
+}
+
+/*==================================================
+NO POSTS
+==================================================*/
+
+.no-post{
+
+    text-align:center;
+
+    background:#fff;
+
+    padding:80px 30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    color:#777;
+
+    font-size:18px;
+
+}
+
+/*==================================================
+LOADING
+==================================================*/
+
+.loading{
+
+    text-align:center;
+
+    padding:80px;
+
+    font-size:18px;
+
+    color:#999;
+
+}
+
+/*==================================================
+IMAGE EFFECT
+==================================================*/
+
+.news-card img,
+
+.news-sidebar img{
+
+    backface-visibility:hidden;
+
+    -webkit-backface-visibility:hidden;
+
+}
+
+/*==================================================
+CONTACT WIDGET
+==================================================*/
+
+.zalo-widget{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    gap:15px;
+
+    z-index:999999;
+
+}
+
+/*==============================
+Nút chung
+==============================*/
+
+.zalo-button,
+.phone-button{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+}
+
+.zalo-button:hover,
+.phone-button:hover{
+
+    transform:translateY(-5px) scale(1.08);
+
+}
+
+/*==============================
+Zalo
+==============================*/
+
+.zalo-button{
+
+    background:#fff;
+
+    animation:zaloPulse 1.8s infinite;
+
+}
+
+.zalo-button img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+/*==============================
+Phone
+==============================*/
+
+.phone-button{
+
+    background:#00843D;
+
+    animation:phonePulse 1.8s infinite;
+
+    animation-delay:.6s;
+
+}
+
+.phone-button svg{
+
+    width:30px;
+
+    height:30px;
+
+}
+
+/*==============================
+Tooltip
+==============================*/
+
+.phone-tooltip{
+
+    position:absolute;
+
+    right:82px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:#00843D;
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.phone-tooltip::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-7px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border-top:7px solid transparent;
+
+    border-bottom:7px solid transparent;
+
+    border-left:7px solid #00843D;
+
+}
+
+.phone-button:hover .phone-tooltip{
+
+    opacity:1;
+
+    visibility:visible;
+
+    right:88px;
+
+}
+
+/*==============================
+Animation
+==============================*/
+
+@keyframes zaloPulse{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 0 0 rgba(0,104,255,.45);
+
+    }
+
+    70%{
+
+        transform:scale(1.05);
+
+        box-shadow:0 0 0 18px rgba(0,104,255,0);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 0 0 rgba(0,104,255,0);
+
+    }
+
+}
+
+@keyframes phonePulse{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 0 0 rgba(0,132,61,.45);
+
+    }
+
+    70%{
+
+        transform:scale(1.05);
+
+        box-shadow:0 0 0 18px rgba(0,132,61,0);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 0 0 0 rgba(0,132,61,0);
+
+    }
+
+}
+
+/*==============================
+Mobile
+==============================*/
+
+@media(max-width:768px){
+
+    .zalo-widget{
+
+        right:15px;
+
+        bottom:20px;
+
+    }
+
+    .zalo-button,
+    .phone-button{
+
+        width:58px;
+
+        height:58px;
+
+    }
+
+    .phone-tooltip{
+
+        display:none;
+
+    }
+
+}
+
+
+/*==================================================
+GLOBAL
+==================================================*/
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    cursor:pointer;
+}
+
+input,
+textarea,
+select{
+    outline:none;
+}
+
+.news-card img,
+.news-sidebar img{
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+}
+
+/*==================================================
+COPYRIGHT
+==================================================*/
+
+.copyright{
+    color:#777;
+    font-size:15px;
+    font-weight:600;
+}
+
+.copyright-link{
+    color:#777;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.copyright-link:hover{
+    color:#d4a017;
+    text-decoration:underline;
+}
+
+    </style>
+
+
+
+
+
+    <!-- Header -->
+
+    <header class="custom-header">
+
+        <div class="header-container">
+
+            <div class="top-bar">
+
+                <div class="logo">
+
+                    BIA CỔ LOA
+
+                </div>
+
+                 <nav>
+    <ul>
+        <li><a href="http://biacoloa.local/">TRANG CHỦ</a></li>
+        <li><a href="http://biacoloa.local/gioi-thieu/">GIỚI THIỆU</a></li>
+        <li><a href="http://biacoloa.local/5-2/">SẢN PHẨM</a></li>
+        <li><a href="http://biacoloa.local/tin-tuc/" class="active">TIN TỨC</a></li>
+        <li><a href="#">LIÊN HỆ</a></li>
+    </ul>
+</nav>
+
+                <a href="https://zalo.me/0976005651" class="hotline">
+
+                    Liên Hệ Ngay
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Banner -->
+
+    <section class="banner">
+
+        <div class="container banner-content">
+
+            <div class="banner-left">
+
+                <h1>TIN TỨC VỀ BIA</h1>
+
+               
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Search -->
+
+    <div class="container">
+
+        <input type="text" placeholder="Tìm bài viết..." id="searchInput">
+
+    </div>
+
+    <!-- News -->
+
+    <div class="container">
+
+        <div class="news-layout">
+
+            <div id="news-list">
+
+                <!-- Card 1 -->
+
+                <div class="news-card">
+
+                    <a href="#">
+
+                        <img src="demo.jpg">
+
+                    </a>
+
+                    <div class="content">
+
+                        <h3>
+
+                            <a href="#">
+
+                                Tiêu đề bài viết
+
+                            </a>
+
+                        </h3>
+
+                        <small>
+
+                            © HEINEKEN Việt Nam
+
+                        </small>
+
+                        <p>
+
+                            Mô tả bài viết...
+
+                        </p>
+
+                        <a href="#" class="read-more">
+
+                            XEM CHI TIẾT
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="news-sidebar">
+
+                <img src="banner1.jpg">
+
+                <img src="banner2.jpg">
+
+            </aside>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            © CÔNG TY CỔ PHẦN TM&amp;DV NGÂN THY
+
+        </div>
+
+    </footer>
+
+    <!-- Widget -->
+
+    <div class="zalo-widget">
+        <a href="https://zalo.me/0976005651" target="_blank" class="zalo-button">
+            <img src="https://stc-zaloprofile.zdn.vn/pc/v1/images/zalo_sharelogo.png" alt="Zalo Logo">
+        </a>
+
+        <a href="tel:0976005651" class="phone-button">
+            <span class="phone-tooltip">0976005651</span>
+            <svg fill="#ffffff" viewBox="0 0 24 24" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A19.94 19.94 0 012 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.21 1.11l-2.24 2.2z">
+                </path>
+            </svg>
+        </a>
+    </div>
+
+
+<!-- XLSX -->
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<!-- LIST JS -->
+
+<script src="js/list.js"></script>

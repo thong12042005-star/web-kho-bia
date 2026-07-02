@@ -1,0 +1,271 @@
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Roboto',sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+.container{
+    width:1200px;
+    margin:auto;
+}
+/* ================= HEADER ================= */
+
+header{
+    background:#111;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+white-space: nowrap;
+}
+
+.logo{
+    color:#ffc107;
+    font-size:20px;
+    font-weight:700;
+    line-height:1.4;
+    max-width:400px;
+margin-right: 40px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffc107;
+    text-decoration: underline;
+text-underline-offset: 15px;
+}
+nav a.active {
+    color: #ffc107;
+    text-decoration: underline;
+text-underline-offset: 15px;
+    font-weight: 700; /* Tùy chọn: làm đậm chữ để làm nổi bật hơn */
+}
+
+.hotline{
+    background:#ffc107;
+    color:#000;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:700;
+    cursor:pointer;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+/* Hiệu ứng nổi lên 3D cho nút Liên Hệ Hợp Tác */
+.btn-lien-he {
+    background-color: #16a34a !important; /* Màu xanh lá gốc */
+    color: #ffffff !important;           /* Chữ trắng */
+    position: relative;
+    top: 0;                              /* Vị trí ban đầu */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease !important; /* Giúp hiệu ứng di chuyển mượt mà */
+}
+
+/* Khi di chuột vào: Nút vừa đổi màu, vừa nhấc lên, bóng đổ đậm hơn */
+.btn-lien-he:hover {
+    background-color: #dfb34c !important; /* Đổi sang màu vàng brandGold */
+    color: #ffffff !important;           
+    transform: translateY(-4px);         /* Đẩy nút dịch chuyển lên trên 4px tạo hiệu ứng nổi hẳn lên */
+    box-shadow: 0 15px 25px -5px rgba(223, 179, 76, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important; /* Đổ bóng kép sâu hơn để tăng cảm giác khoảng cách */
+}
+
+/* Khi người dùng click chuột vào nút (Tạo hiệu ứng nhấn nút lún xuống) */
+.btn-lien-he:active {
+    transform: translateY(-1px);         /* Ấn xuống gần vị trí cũ */
+    box-shadow: 0 5px 10px -3px rgba(223, 179, 76, 0.4) !important; /* Bóng thu nhỏ lại */
+}
+/* ================= FOOTER ================= */
+
+footer{
+    background:
+        linear-gradient(
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.75)
+        ),
+        url('http://localhost:10005/wp-content/uploads/2026/06/bia-cheer.avif');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+footer h2{
+    font-size:48px;
+    color:#ffc107;
+    margin-bottom:30px;
+    text-transform:uppercase;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.contact-buttons a{
+    background:#ffc107;
+    color:#000;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.contact-buttons a:hover{
+    transform:translateY(-3px);
+}
+/* CONTACT WIDGETS */
+.zalo-widget {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    z-index: 999999 !important;
+}
+
+
+.zalo-button,
+.phone-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+}
+
+.zalo-button {
+    animation: zaloPulse 1.5s infinite;
+    /* Thêm hiệu ứng nhịp đập */
+}
+
+.phone-button {
+    background-color: #4CAF50;
+    animation: phonePulse 1.5s infinite;
+    animation-delay: 0.5s;
+}
+
+/* Keyframes cho hiệu ứng rung/nhịp đập */
+@keyframes zaloPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(0, 104, 255, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 104, 255, 0);
+    }
+}
+
+@keyframes phonePulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+.zalo-button:hover,
+.phone-button:hover {
+    transform: scale(1.05);
+}
+
+.zalo-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.phone-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.phone-tooltip {
+    position: absolute;
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+.phone-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #4CAF50;
+}
+
+.phone-button:hover .phone-tooltip {
+    opacity: 1;
+    visibility: visible;
+    right: 70px;
+}

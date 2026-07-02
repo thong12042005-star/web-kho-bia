@@ -1,0 +1,399 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Bia Chính Hãng</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* ==========================================================================
+   1. ẨN HOÀN TOÀN HEADER MẶC ĐỊNH & TIÊU ĐỀ TRANG CỦA WORDPRESS
+   ========================================================================== */
+    header.wp-block-template-part,
+    .wp-block-template-part,
+    #masthead,
+    .site-header,
+    .top-header-bar,
+    .wp-block-post-title,
+    h1.wp-block-post-title,
+    .entry-title,
+    .page-title {
+        display: none !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* ==========================================================================
+   2. RESET TOÀN BỘ KHOẢNG TRỐNG TRÊN CÙNG CỦA HỆ THỐNG (LẤP ĐẦY KHOẢNG TRẮNG)
+   ========================================================================== */
+    html,
+    body,
+    #page,
+    .site,
+    .wp-site-blocks,
+    main,
+    .site-container,
+    .main-container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        top: 0 !important;
+        position: relative !important;
+    }
+
+    /* Triệt tiêu padding tự động sinh ra từ cấu trúc Layout Content của WP */
+    .entry-content,
+    .wp-block-post-content,
+    :root :where(.wp-block-post-content),
+    :root :where(.entry-content) {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* ==========================================================================
+   3. CẤU HÌNH ĐÈ HEADER MỚI LÊN ĐẦU TRANG (FIXED)
+   ========================================================================== */
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 99999 !important;
+        margin-top: 0 !important;
+    }
+
+    body.admin-bar header {
+        top: 32px !important;
+    }
+
+    /* Đẩy phần banner xuống một khoảng vừa đủ để không bị header fixed che khuất */
+    .banner {
+        padding-top: 55px !important; 
+        margin-top: 0 !important;
+        height: 475px !important; 
+    }
+</style>
+
+<header>
+    <div class="container top-bar">
+        <div class="logo">
+            BIA CỔ LOA
+        </div>
+        <nav>
+    <ul>
+        <li><a href="http://biacoloa.local/">TRANG CHỦ</a></li>
+        <li><a href="http://biacoloa.local/gioi-thieu/">GIỚI THIỆU</a></li>
+        <li><a href="http://biacoloa.local/5-2/" class="active">SẢN PHẨM</a></li>
+        <li><a href="http://biacoloa.local/tin-tuc/">TIN TỨC</a></li>
+        <li><a href="#">LIÊN HỆ</a></li>
+    </ul>
+</nav>
+
+        <div class="hotline">
+            <a href="https://zalo.me/0976005651" target="_blank" rel="noopener noreferrer">Liên Hệ Ngay</a>
+        </div>
+    </div>
+</header>
+
+<section class="banner">
+    <div class="container banner-content">
+        <div class="banner-left">
+            <h1>SẢN PHẨM</h1>
+            
+        </div>
+    </div>
+</section>
+
+<section id="danh-muc-san-pham" class="container filter-container">
+    <div class="category">
+        <img src="http://BiaCoLoa.local/wp-content/uploads/2026/06/logo-ken.png" alt="Logo" style="height: 40px; margin-right: 15px; vertical-align: middle; object-fit: contain;">
+        <button class="active" data-filter="all">TẤT CẢ</button>
+        <button data-filter="heineken">BIA HEINEKEN</button>
+        <button data-filter="tiger">BIA TIGER</button>
+        <button data-filter="lon">BIA LON</button>
+        <button data-filter="chai">BIA CHAI</button>
+        <button data-filter="khac">KHÁC</button>
+    </div>
+
+    <div class="filter-row">
+        <div class="sort-dropdown">
+            <div class="sort-selected">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h18M6 12h12m-9 6h6"></path>
+                </svg>
+                Xếp theo: <strong>Tất cả</strong>
+                <span class="arrow">▼</span>
+            </div>
+            <ul class="sort-options">
+                <li class="active">Tất cả</li>
+                <li>Tên từ A-Z</li>
+                <li>Tên từ Z-A</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="product-list" class="container products ">
+</section>
+
+<div class="container pagination" id="pagination">
+    <a href="#" class="page-link" data-action="prev">&lt;</a>
+    <a href="#" class="page-link active" data-page="1">1</a>
+    <a href="#" class="page-link" data-page="2">2</a>
+    <a href="#" class="page-link" data-page="3">3</a>
+    <a href="#" class="page-link" data-action="next">&gt;</a>
+</div>
+
+<section class="footer-contact">
+    <div class="container footer-box">
+        <div>
+            <h3>LIÊN HỆ NHẬN BÁO GIÁ SỈ</h3>
+            <p>Vui lòng liên hệ để được tư vấn và nhận báo giá tốt nhất</p>
+        </div>
+        <a href="https://zalo.me/0976005651" class="btn-footer" target="_blank" rel="noopener noreferrer">LIÊN HỆ NGAY</a>
+    </div>
+</section>
+
+<div class="zalo-widget">
+    <a href="https://zalo.me/0976005651" target="_blank" class="zalo-button">
+        <img src="https://stc-zaloprofile.zdn.vn/pc/v1/images/zalo_sharelogo.png" alt="Zalo Logo">
+    </a>
+
+    <a href="tel:0976005651" class="phone-button">
+        <span class="phone-tooltip">0976005651</span>
+        <svg fill="#ffffff" viewBox="0 0 24 24" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A19.94 19.94 0 012 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.21 1.11l-2.24 2.2z">
+            </path>
+        </svg>
+    </a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<script>
+    function initFilters() {
+        const itemsPerPage = 10;
+        const allProducts = Array.from(document.querySelectorAll('.product'));
+        let filteredProducts = [...allProducts];
+        const pageLinks = document.querySelectorAll('.page-link[data-page]');
+        const prevLink = document.querySelector('.page-link[data-action="prev"]');
+        const nextLink = document.querySelector('.page-link[data-action="next"]');
+        const paginationContainer = document.getElementById('pagination');
+        let currentPage = 1;
+
+        const categoryButtons = document.querySelectorAll('.category button');
+
+        const sortOptionItems = document.querySelectorAll('.sort-options li');
+        const sortSelectedText = document.querySelector('.sort-selected strong');
+        let currentSort = 'Tất cả';
+
+        function applySort() {
+            if (currentSort === 'Tên từ A-Z') {
+                filteredProducts.sort((a, b) => {
+                    const titleA = a.querySelector('h3').textContent.trim();
+                    const titleB = b.querySelector('h3').textContent.trim();
+                    return titleA.localeCompare(titleB, 'vi');
+                });
+            } else if (currentSort === 'Tên từ Z-A') {
+                filteredProducts.sort((a, b) => {
+                    const titleA = a.querySelector('h3').textContent.trim();
+                    const titleB = b.querySelector('h3').textContent.trim();
+                    return titleB.localeCompare(titleA, 'vi');
+                });
+            }
+        }
+
+        function updatePagination() {
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage) || 1;
+
+            allProducts.forEach(p => p.style.display = 'none');
+
+            filteredProducts.forEach((p, index) => {
+                if (index >= (currentPage - 1) * itemsPerPage && index < currentPage * itemsPerPage) {
+                    p.style.display = 'flex';
+                }
+            });
+
+            pageLinks.forEach(link => {
+                const pageNum = parseInt(link.getAttribute('data-page'));
+                if (pageNum <= totalPages) {
+                    link.style.display = 'flex';
+                    link.classList.toggle('active', pageNum === currentPage);
+                } else {
+                    link.style.display = 'none';
+                }
+            });
+
+            prevLink.style.visibility = (currentPage > 1) ? 'visible' : 'hidden';
+            nextLink.style.visibility = (currentPage < totalPages) ? 'visible' : 'hidden';
+
+            if (totalPages <= 1) {
+                paginationContainer.style.display = 'none';
+            } else {
+                paginationContainer.style.display = 'flex';
+            }
+        }
+
+        pageLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentPage = parseInt(this.getAttribute('data-page'));
+                updatePagination();
+            });
+        });
+
+        prevLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+            }
+        });
+
+        nextLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePagination();
+            }
+        });
+
+        sortOptionItems.forEach(item => {
+            item.addEventListener('click', function () {
+                sortOptionItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                currentSort = this.textContent.trim();
+                sortSelectedText.textContent = currentSort;
+
+                const activeCategoryBtn = document.querySelector('.category button.active');
+                if (activeCategoryBtn) {
+                    activeCategoryBtn.click();
+                }
+            });
+        });
+
+        categoryButtons.forEach(btn => {
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+            newBtn.addEventListener('click', function () {
+                const allCatBtns = document.querySelectorAll('.category button');
+                allCatBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter') || 'all';
+
+                filteredProducts = allProducts.filter(p => {
+                    if (filter === 'all') return true;
+
+                    const title = p.querySelector('h3').textContent.toLowerCase();
+                    const desc = p.querySelector('ul').textContent.toLowerCase();
+                    const text = title + ' ' + desc;
+
+                    if (filter === 'heineken') {
+                        return title.includes('heineken');
+                    }
+                    if (filter === 'tiger') {
+                        return title.includes('tiger');
+                    }
+                    if (filter === 'lon') {
+                        return (text.includes('lon') || text.includes('nhôm')) && !text.includes('sting') && !text.includes('coca') && !text.includes('strongbow');
+                    }
+                    if (filter === 'chai') {
+                        return text.includes('chai') && !text.includes('sting') && !text.includes('aquafina') && !text.includes('strongbow');
+                    }
+                    if (filter === 'khac') {
+                        return text.includes('strongbow') || text.includes('sting') || text.includes('coca') || text.includes('aquafina') || text.includes('bia việt');
+                    }
+
+                    return true;
+                });
+
+                applySort();
+                currentPage = 1;
+                updatePagination();
+            });
+        });
+
+        updatePagination();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const productList = document.getElementById('product-list');
+        const csvUrl = 'http://biacoloa.local/wp-content/uploads/2026/07/dsbia.csv';
+
+        Papa.parse(csvUrl, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+                renderProducts(results.data);
+            },
+            error: function (error) {
+                console.error("Lỗi khi đọc file CSV:", error);
+            }
+        });
+
+        function renderProducts(products) {
+            productList.innerHTML = products.map(p => {
+                if (!p['Product-id']) return '';
+
+                return `
+                <div class="product">
+                    <img src="${p['Images']}" alt="${p['Product-name']}">
+                    <h3>${p['Product-name']}</h3>
+                    <ul>
+                        <li>Thương hiệu: ${p['Brand']}</li>
+                        <li>Quy cách: ${p['Specification']}</li>
+                        <li>Dung tích: ${p['Capacity']}</li>
+                    </ul>
+                    <button type="button" onclick="window.open('http://BiaCoLoa.local/test/?id=${p['Product-id']}')">Xem Chi Tiết</button>
+                </div>
+                `;
+            }).join('');
+
+            if (typeof initFilters === 'function') {
+                initFilters();
+            }
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let isAutoScrolling = false;
+
+        window.addEventListener("wheel", function (e) {
+            const categorySection = document.getElementById('danh-muc-san-pham');
+            const header = document.querySelector('header');
+            
+            // Lấy chiều cao thực tế của thanh menu
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            // Chỉ kích hoạt khi đang ở trên cùng trang (Y = 0) và cuộn xuống
+            if (window.scrollY === 0 && e.deltaY > 0 && !isAutoScrolling) {
+                isAutoScrolling = true;
+
+                // Tọa độ tuyệt đối của khu vực danh mục sản phẩm
+                const targetPosition = categorySection.offsetTop;
+                
+                // BIẾN CANH CHỈNH: 
+                // Tăng số này lên (ví dụ: 100, 120) nếu nó vẫn cuộn quá sâu.
+                // Giảm số này xuống (ví dụ: 30, 50) nếu nó chưa cuộn tới nơi.
+                const khoangCachTruHao = 80; 
+
+                // Thực hiện cuộn
+                window.scrollTo({
+                    top: targetPosition - headerHeight - khoangCachTruHao,
+                    behavior: 'smooth'
+                });
+
+                // Khóa sự kiện cuộn trong 800ms để hiệu ứng trượt hoàn tất
+                setTimeout(() => {
+                    isAutoScrolling = false;
+                }, 800);
+            }
+        });
+    });
+</script>

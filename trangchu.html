@@ -1,0 +1,386 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Bia Chính Hãng</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+
+<style>
+    /* ==========================================================================
+   1. ẨN HOÀN TOÀN HEADER MẶC ĐỊNH & TIÊU ĐỀ TRANG CỦA WORDPRESS
+   ========================================================================== */
+header.wp-block-template-part,
+.wp-block-template-part,
+#masthead, 
+.site-header,
+.top-header-bar,
+.wp-block-post-title,
+h1.wp-block-post-title,
+.entry-title,
+.page-title {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* ==========================================================================
+   2. RESET TOÀN BỘ KHOẢNG TRỐNG TRÊN CÙNG CỦA HỆ THỐNG (LẤP ĐẦY KHOẢNG TRẮNG)
+   ========================================================================== */
+html, 
+body, 
+#page, 
+.site, 
+.wp-site-blocks, 
+main,
+.site-container, 
+.main-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+}
+
+/* Triệt tiêu padding tự động sinh ra từ cấu trúc Layout Content của WP */
+.entry-content, 
+.wp-block-post-content,
+:root :where(.wp-block-post-content),
+:root :where(.entry-content) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* ==========================================================================
+   3. CẤU HÌNH ĐÈ HEADER MỚI LÊN ĐẦU TRANG (FIXED)
+   ========================================================================== */
+header {
+    position: fixed !important; /* Đóng băng header đè lên mọi khung trống mặc định */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    margin-top: 0 !important;
+}
+
+/* Đẩy phần nội dung (Hero banner) xuống một khoảng vừa đủ để không bị header fixed che khuất */
+header + section,
+main > section:first-of-type,
+.wp-block-post-content {
+    padding-top: 70px !important; /* Thay đổi số này (ví dụ: 75px, 80px) tùy theo độ cao thực tế menu của bạn */
+    margin-top: 0 !important;
+}
+/* Xóa toàn bộ khoảng trắng WordPress */
+
+body,
+html,
+.wp-site-blocks,
+.wp-block-group,
+main,
+.site-main,
+.wp-block-post-content,
+.entry-content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Xóa margin của block đầu tiên */
+.wp-block-post-content > *:first-child,
+.entry-content > *:first-child {
+    margin-top: 0 !important;
+}
+
+/* Xóa khoảng trắng do alignfull */
+.alignfull {
+    margin-top: 0 !important;
+}
+
+/* Block layout */
+.is-layout-flow > * {
+    margin-block-start: 0 !important;
+}
+</style>
+<header>
+    <div class="container top-bar">
+        <div class="logo">
+    BIA CỔ LOA
+</div>
+<nav>
+    <ul>
+        <li><a href="#" class="active">TRANG CHỦ</a></li>
+        <li><a href="http://biacoloa.local/gioi-thieu/">GIỚI THIỆU</a></li>
+        <li><a href="http://biacoloa.local/5-2/">SẢN PHẨM</a></li>
+        <li><a href="http://biacoloa.local/tin-tuc/">TIN TỨC</a></li>
+        <li><a href="https://zalo.me/0976005651">LIÊN HỆ</a></li>
+    </ul>
+</nav>
+
+<a href="https://zalo.me/0976005651" class="hotline">
+    Liên Hệ Ngay
+</a>
+</div></header>
+
+<section class="hero">
+    <div class="slider-container">
+        <div class="slide active">
+            <img src="http://biacoloa.local/wp-content/uploads/2026/06/kho.jpg" alt="Kho bia chính hãng 1" loading="eager">
+        </div>
+        <div class="slide">
+            <img src="http://biacoloa.local/wp-content/uploads/2026/06/banner-bia.jpg" alt="Kho bia chính hãng 2" loading="eager">
+        </div>
+        <div class="slide">
+            <img src="http://biacoloa.local/wp-content/uploads/2026/06/banner1.jpg" alt="Kho bia chính hãng 3" loading="eager">
+        </div>
+    </div>
+</section>
+<section class="video-section">
+    <div class="container">
+        <h2 class="section-title">Video</h2>
+
+        <div class="video-wrapper">
+            <video autoplay="" muted="" loop="" playsinline="" controls="" poster="http://localhost:10005/wp-content/uploads/2026/06/anh-da-dien-video.jpg">
+
+                <source src="http://biacoloa.local/wp-content/uploads/2026/07/bia-video.mp4" type="video/mp4">
+
+                Trình duyệt của bạn không hỗ trợ xem video này.
+            </video>
+        </div>
+    </div>
+</section>
+
+
+<section class="featured-news">
+    <div class="container" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 25px; font-size: 38px; font-weight: bold;">Tin Tức Nổi Bật</h2>
+        
+        <div class="news-slider-wrapper">
+            <button class="news-arrow arrow-left" id="newsPrevBtn">❮</button>
+            
+<div class="news-grid">
+    <div id="news-list"></div>
+</div>
+            
+            <button class="news-arrow arrow-right" id="newsNextBtn">❯</button>
+        </div>
+
+        <div class="news-more-wrapper">
+            <a href="http://biacoloa.local/tin-tuc/" class="btn-view-more">XEM THÊM BÀI VIẾT</a>
+        </div>
+    </div>
+</section>
+   <hr class="border-green-200 max-w-7xl mx-auto">
+
+<section class="section">
+    <div class="container">
+
+        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+
+        <div class="product-slider-wrapper">
+
+            <button class="product-arrow arrow-left" id="productPrevBtn">
+                ❮
+            </button>
+
+            <section id="product-list" class="products">
+            </section>
+
+            <button class="product-arrow arrow-right" id="productNextBtn">
+                ❯
+            </button>
+
+        </div>
+
+        <!-- Phân trang -->
+        <div id="pagination" class="pagination" style="display:none;">
+            <a href="#" class="page-link" data-action="prev">❮</a>
+
+            <a href="#" class="page-link active" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>
+            <a href="#" class="page-link" data-page="4">4</a>
+            <a href="#" class="page-link" data-page="5">5</a>
+
+            <a href="#" class="page-link" data-action="next">❯</a>
+        </div>
+
+        <div class="news-more-wrapper">
+            <a href="http://biacoloa.local/5-2/" class="btn-view-more">
+                XEM THÊM SẢN PHẨM
+            </a>
+        </div>
+
+    </div>
+</section>
+<footer>
+    <h2>Sẵn Sàng Hợp Tác Cùng Kho Bia</h2>
+
+    <div class="contact-buttons">
+        <a href="#">Gọi Ngay</a>
+        <a href="#">Nhắn Zalo</a>
+        <a href="#">Gửi Yêu Cầu</a>
+    </div>
+</footer>
+<div class="zalo-widget">
+    <a href="https://zalo.me/0976005651" target="_blank" class="zalo-button">
+        <img src="https://stc-zaloprofile.zdn.vn/pc/v1/images/zalo_sharelogo.png" alt="Zalo Logo">
+    </a>
+
+    <a href="tel:0976005651" class="phone-button">
+        <span class="phone-tooltip">0976005651</span>
+        <svg fill="#ffffff" viewBox="0 0 24 24" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A19.94 19.94 0 012 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.21 1.11l-2.24 2.2z">
+            </path>
+        </svg>
+    </a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+    // Cấu hình Tailwind Đông bộ
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    brandGold: '#dfb34c',
+                    brandDark: '#111111',
+                }
+            }
+        }
+    };
+
+    // --- Slider Sản Phẩm (Products) ---
+function initFilters() {
+
+    const itemsPerPage = 5;
+    const allProducts = Array.from(document.querySelectorAll(".product"));
+    const filteredProducts = [...allProducts];
+
+const prevBtn = document.getElementById("productPrevBtn");
+const nextBtn = document.getElementById("productNextBtn");
+
+    let currentPage = 1;
+
+    function updatePagination() {
+
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+        // Ẩn tất cả sản phẩm
+        allProducts.forEach(p => {
+            p.style.display = "none";
+        });
+
+        // Hiện sản phẩm của trang hiện tại
+        filteredProducts.forEach((p, index) => {
+            if (
+                index >= (currentPage - 1) * itemsPerPage &&
+                index < currentPage * itemsPerPage
+            ) {
+                p.style.display = "block";
+            }
+        });
+
+        // Ẩn/hiện nút
+        prevBtn.style.visibility = currentPage === 1 ? "hidden" : "visible";
+        nextBtn.style.visibility = currentPage === totalPages ? "hidden" : "visible";
+    }
+
+    // Nút Trang trước
+    prevBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (currentPage > 1) {
+            currentPage--;
+            updatePagination();
+        }
+    });
+
+    // Nút Trang sau
+    nextBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePagination();
+        }
+    });
+
+    updatePagination();
+}
+document.addEventListener("DOMContentLoaded", function () {
+        const productList = document.getElementById('product-list');
+
+        // Đường dẫn tới file CSV
+        const csvUrl = 'http://biacoloa.local/wp-content/uploads/2026/07/dsbia.csv';
+
+        Papa.parse(csvUrl, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+                renderProducts(results.data);
+            },
+            error: function (error) {
+                console.error("Lỗi khi đọc file CSV:", error);
+            }
+        });
+
+        function renderProducts(products) {
+            productList.innerHTML = products.map(p => {
+                // Bỏ qua nếu dòng đó không có mã ID sản phẩm
+                if (!p['Product-id']) return '';
+
+                return `
+                <div class="product">
+                    <img src="${p['Images']}" alt="${p['Product-name']}">
+                    <h3>${p['Product-name']}</h3>
+                    <ul>
+                        <li>Thương hiệu: ${p['Brand']}</li>
+                        <li>Quy cách: ${p['Specification']}</li>
+                        <li>Dung tích: ${p['Capacity']}</li>
+                    </ul>
+                    <button type="button" onclick="window.open('http://BiaCoLoa.local/test/?id=${p['Product-id']}')">Xem Chi Tiết</button>
+                </div>
+                `;
+            }).join('');
+
+            // Sau khi render xong mới chạy lại logic lọc/phân trang
+            if (typeof initFilters === 'function') {
+                initFilters();
+            }
+        }
+    });
+/* ================= HERO SLIDER ================= */
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slides = document.querySelectorAll(".hero .slide");
+
+    if (slides.length === 0) return;
+
+    let current = 0;
+
+    setInterval(function () {
+
+        // Ẩn ảnh hiện tại
+        slides[current].classList.remove("active");
+
+        // Sang ảnh tiếp theo
+        current = (current + 1) % slides.length;
+
+        // Hiện ảnh mới
+        slides[current].classList.add("active");
+
+    }, 4000); // đổi ảnh mỗi 4 giây
+
+});
+</script>
+<!-- XLSX -->
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<!-- LIST JS -->
+
+<script src="js/list.js"></script>

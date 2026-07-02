@@ -1,0 +1,394 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Chi Tiết Sản Phẩm - Kho Bia Chính Hãng</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    /* ==========================================================================
+   1. ẨN HOÀN TOÀN HEADER MẶC ĐỊNH, TIÊU ĐỀ & THÔNG TIN BÀI VIẾT CỦA WORDPRESS
+   ========================================================================== */
+    header.wp-block-template-part,
+    .wp-block-template-part,
+    #masthead,
+    .site-header,
+    .top-header-bar,
+    .wp-block-post-title,
+    h1.wp-block-post-title,
+    .entry-title,
+    .page-title,
+    /* Đã bổ sung class bạn vừa tìm được bằng F12 ở đây */
+    .wp-container-core-group-is-layout-fd1a9a6d,
+    .wp-block-group.has-small-font-size.is-layout-flex {
+        display: none !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    /* ==========================================================================
+   2. RESET TOÀN BỘ KHOẢNG TRỐNG TRÊN CÙNG CỦA HỆ THỐNG (LẤP ĐẦY KHOẢNG TRẮNG)
+   ========================================================================== */
+    html,
+    body,
+    #page,
+    .site,
+    .wp-site-blocks,
+    main,
+    .site-container,
+    .main-container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        top: 0 !important;
+        position: relative !important;
+    }
+
+    /* Triệt tiêu padding tự động sinh ra từ cấu trúc Layout Content của WP */
+    .entry-content,
+    .wp-block-post-content,
+    :root :where(.wp-block-post-content),
+    :root :where(.entry-content) {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* ==========================================================================
+   3. CẤU HÌNH ĐÈ HEADER MỚI LÊN ĐẦU TRANG (FIXED)
+   ========================================================================== */
+    header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 99999 !important;
+        margin-top: 0 !important;
+    }
+
+    body.admin-bar header {
+        top: 32px !important;
+    }
+
+</style>
+<header>
+    <div class="container top-bar">
+        <div class="logo">
+ BIA CỔ LOA</div>
+<nav>
+    <ul>
+                <li><a href="http://biacoloa.local/">TRANG CHỦ</a></li>
+                <li><a href="http://biacoloa.local/gioi-thieu/">GIỚI THIỆU</a></li>
+               
+                <li><a href="http://BiaCoLoa.local/#" class="active">SẢN PHẨM</a></li>
+                <li><a href="#">TIN TỨC</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+</nav>
+
+        <div class="hotline">
+    <a href="https://zalo.me/0976005651" target="_blank" rel="noopener noreferrer">Liên Hệ Ngay</a>
+</div>
+    </div>
+</header>
+
+<div class="container product-detail-container">
+    <div class="product-detail-image">
+
+        <div id="main-media-display" style="position: relative; width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; background: #fff;">
+            <img id="pd-image" src="" alt="Hình ảnh sản phẩm" style="width: 100%; max-height: 650px; object-fit: contain;">
+
+            <video id="pd-video-player" controls="" style="display: none; width: 100%; max-height: 650px; outline: none;">
+                <source id="pd-video-source" src="" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+
+            <iframe id="pd-youtube-player" style="display: none; width: 100%; height: 500px;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+
+        <div class="product-media-gallery">
+            <div class="media-images">
+                <div class="video-thumbnail thumb-media" id="pd-video-container" style="display: none;" onclick="playVideoInline(this)">
+                    <img id="pd-video-img" src="" alt="Video chi tiết">
+                    <div class="play-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <img class="thumb-media thumb-img" id="pd-gallery-main" src="" alt="Ảnh chính" style="display: none;" onclick="changeMainImage(this.src, this)">
+                <img class="thumb-media thumb-img" id="pd-gallery-1" src="" alt="Ảnh phụ 1" style="display: none;" onclick="changeMainImage(this.src, this)">
+                <img class="thumb-media thumb-img" id="pd-gallery-2" src="" alt="Ảnh phụ 2" style="display: none;" onclick="changeMainImage(this.src, this)">
+                <img class="thumb-media thumb-img" id="pd-gallery-3" src="" alt="Ảnh phụ 3" style="display: none;" onclick="changeMainImage(this.src, this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="product-detail-info">
+        <h1 id="pd-name">Đang tải tên sản phẩm...</h1>
+
+        <div class="description" style="margin-bottom: 20px;">
+            <p>Hương vị sảng khoái, chất lượng tuyệt hảo từ nhà sản xuất chính hãng.</p>
+        </div>
+
+        <ul>
+            <li><strong>Thương hiệu:</strong> <span id="pd-brand">Đang tải...</span></li>
+            <li><strong>Dung tích:</strong> <span id="pd-capacity">Đang tải...</span></li>
+            <li><strong>Quy cách:</strong> <span id="pd-spec">Đang tải...</span></li>
+            <li><strong>Xuất xứ:</strong> <span id="pd-origin">Đang tải...</span></li>
+            <li><strong>Thành phần:</strong> <span id="pd-ingredient">Đang tải...</span></li>
+        </ul>
+
+        <a href="#" class="btn-buy" id="pd-ecommerce-link" target="_blank">
+            <img src="images/logo.png" alt="Logo Sàn" class="btn-logo" id="pd-ecommerce-logo">
+            LIÊN HỆ ĐẶT HÀNG NGAY
+        </a>
+    </div>
+</div>
+
+<section class="footer-contact">
+    <div class="container footer-box">
+        <div>
+            <h3>LIÊN HỆ NHẬN BÁO GIÁ SỈ</h3>
+            <p>Vui lòng liên hệ để được tư vấn và nhận báo giá tốt nhất</p>
+        </div>
+        <a href="https://zalo.me/0976005651" class="btn-footer" target="_blank" rel="noopener noreferrer">LIÊN HỆ NGAY</a>
+    </div>
+</section>
+
+<div class="zalo-widget">
+    <a href="https://zalo.me/0976005651" target="_blank" class="zalo-button">
+        <img src="https://stc-zaloprofile.zdn.vn/pc/v1/images/zalo_sharelogo.png" alt="Zalo Logo">
+    </a>
+    <a href="tel:0976005651" class="phone-button">
+        <span class="phone-tooltip">0976005651</span>
+        <svg fill="#ffffff" viewBox="0 0 24 24" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A19.94 19.94 0 012 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.21 1.11l-2.24 2.2z"></path>
+        </svg>
+    </a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<script>
+    let currentVideoLink = "";
+
+    // --- CÁC BIẾN CHO TÍNH NĂNG TỰ ĐỘNG CHUYỂN ẢNH (SLIDESHOW) ---
+    let autoSlideInterval;
+    let visibleImages = []; // Mảng chứa các ảnh đang hiển thị thực tế
+    let currentSlideIndex = 0;
+    let isVideoPlaying = false; // Trạng thái có đang xem video hay không
+
+    // Khởi động bộ đếm giờ (3 giây chuyển ảnh 1 lần)
+    function startAutoSlide() {
+        if (visibleImages.length <= 1 || isVideoPlaying) return;
+
+        stopAutoSlide(); // Xóa bộ đếm cũ tránh trùng lặp
+        autoSlideInterval = setInterval(() => {
+            currentSlideIndex++;
+            if (currentSlideIndex >= visibleImages.length) {
+                currentSlideIndex = 0; // Quay lại ảnh đầu tiên
+            }
+            let nextImg = visibleImages[currentSlideIndex];
+            changeMainImage(nextImg.src, nextImg, false); // false: Đánh dấu là hệ thống tự chuyển đổi, không phải người dùng click
+        }, 3000);
+    }
+
+    // Dừng tự động chuyển ảnh
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // Hàm Reset Trình Phát Media (Ẩn video, hiện ảnh hoặc ngược lại)
+    function resetMediaDisplay() {
+        document.getElementById('pd-image').style.display = 'none';
+        const videoPlayer = document.getElementById('pd-video-player');
+        videoPlayer.style.display = 'none';
+        videoPlayer.pause();
+        const ytPlayer = document.getElementById('pd-youtube-player');
+        ytPlayer.style.display = 'none';
+        ytPlayer.src = "";
+    }
+
+    // Xóa class active của toàn bộ thumbnail quảng cáo
+    function clearActiveThumbnails() {
+        const thumbnails = document.querySelectorAll('.thumb-media');
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+    }
+
+    // Khi click hoặc auto-slide vào một ảnh thumbnail bất kỳ
+    function changeMainImage(src, element, isUserClick = true) {
+        isVideoPlaying = false;
+        resetMediaDisplay();
+        clearActiveThumbnails();
+
+        document.getElementById('pd-image').src = src;
+        document.getElementById('pd-image').style.display = 'block';
+        element.classList.add('active');
+
+        // Nếu người dùng chủ động click, cập nhật lại index hiện tại và reset đồng hồ tính giờ
+        if (isUserClick) {
+            currentSlideIndex = visibleImages.indexOf(element);
+            startAutoSlide();
+        }
+    }
+
+    // Khi bấm vào thumbnail xem video
+    function playVideoInline(element) {
+        if (!currentVideoLink) return;
+
+        isVideoPlaying = true;
+        stopAutoSlide(); // Tắt tính năng tự động chuyển ảnh đi khi đang xem video
+        resetMediaDisplay();
+        clearActiveThumbnails();
+        element.classList.add('active');
+
+        // Kiểm tra xem là link Youtube hay link Video MP4 thông thường
+        if (currentVideoLink.includes('youtube.com') || currentVideoLink.includes('youtu.be')) {
+            let ytId = "";
+            if (currentVideoLink.includes('v=')) {
+                ytId = currentVideoLink.split('v=')[1].split('&')[0];
+            } else if (currentVideoLink.includes('youtu.be/')) {
+                ytId = currentVideoLink.split('youtu.be/')[1].split('?')[0];
+            }
+            const ytPlayer = document.getElementById('pd-youtube-player');
+            ytPlayer.src = `https://www.youtube.com/embed/${ytId}?autoplay=1`;
+            ytPlayer.style.display = 'block';
+        } else {
+            const videoPlayer = document.getElementById('pd-video-player');
+            document.getElementById('pd-video-source').src = currentVideoLink;
+            videoPlayer.load();
+            videoPlayer.style.display = 'block';
+            videoPlayer.play();
+        }
+    }
+
+    // KHỞI TẠO VÀ FETCH DỮ LIỆU TỪ FILE CSV
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (!productId) {
+            document.getElementById('pd-name').innerText = "Lỗi: Không tìm thấy mã sản phẩm trên URL!";
+            return;
+        }
+
+        // Đường dẫn file CSV trên host local của bạn
+        const csvUrl = 'http://biacoloa.local/wp-content/uploads/2026/07/dsbia.csv';
+
+        Papa.parse(csvUrl, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            delimiter: ";",
+
+            complete: function (results) {
+                const products = results.data;
+                // Tìm kiếm sản phẩm dựa vào Product-id
+                const currentProduct = products.find(p => p['Product-id'] && p['Product-id'].trim() === productId.trim());
+
+                if (currentProduct) {
+                    // Đổ dữ liệu text căn bản của sản phẩm
+                    document.getElementById('page-title').innerText = currentProduct['Product-name'] + " - Kho Bia Chính Hãng";
+                    // ĐÃ XÓA DÒNG JS UPDATE BREADCRUMB (VÌ BANNER CHỨA NÓ ĐÃ BỊ XÓA)
+                    document.getElementById('pd-name').innerText = currentProduct['Product-name'];
+                    document.getElementById('pd-brand').innerText = currentProduct['Brand'];
+                    document.getElementById('pd-capacity').innerText = currentProduct['Capacity'];
+                    document.getElementById('pd-spec').innerText = currentProduct['Specification'];
+                    document.getElementById('pd-origin').innerText = currentProduct['Origin'] || 'Đang cập nhật';
+                    document.getElementById('pd-ingredient').innerText = currentProduct['ingredient'] || 'Đang cập nhật';
+
+                    // === CHÈN LOGO VÀ LINK SÀN THƯƠNG MẠI TỪ FILE CSV ===
+                    const ecommerceUrl = currentProduct['e-commerce URL'] ? currentProduct['e-commerce URL'].trim() : "#";
+                    const ecommerceLogo = currentProduct['logo e-commerce'] ? currentProduct['logo e-commerce'].trim() : "";
+
+                    // Gán link đích cho nút mua hàng
+                    document.getElementById('pd-ecommerce-link').href = ecommerceUrl;
+                    
+                    // Gán hình ảnh logo của sàn kế bên chữ
+                    if (ecommerceLogo !== "") {
+                        document.getElementById('pd-ecommerce-logo').src = ecommerceLogo;
+                        document.getElementById('pd-ecommerce-logo').style.display = 'inline-block';
+                    } else {
+                        // Nếu dòng sản phẩm đó không có logo e-commerce, ẩn thẻ img này đi
+                        document.getElementById('pd-ecommerce-logo').style.display = 'none';
+                    }
+                    // ===================================================
+
+                    // Xử lý hiển thị ảnh chính
+                    const mainImageSrc = currentProduct['Images'] ? currentProduct['Images'].trim() : "";
+                    document.getElementById('pd-image').src = mainImageSrc;
+                    document.getElementById('pd-image').alt = currentProduct['Product-name'];
+
+                    if (mainImageSrc !== "") {
+                        const imgMainThumb = document.getElementById('pd-gallery-main');
+                        imgMainThumb.src = mainImageSrc;
+                        imgMainThumb.style.display = 'inline-block';
+                        imgMainThumb.classList.add('active');
+                    }
+
+                    // Kiểm tra và hiển thị các ảnh phụ nếu có dữ liệu
+                    if (currentProduct['Image-1'] && currentProduct['Image-1'].trim() !== "") {
+                        const img1 = document.getElementById('pd-gallery-1');
+                        img1.src = currentProduct['Image-1'].trim();
+                        img1.style.display = 'inline-block';
+                    }
+                    if (currentProduct['Image-2'] && currentProduct['Image-2'].trim() !== "") {
+                        const img2 = document.getElementById('pd-gallery-2');
+                        img2.src = currentProduct['Image-2'].trim();
+                        img2.style.display = 'inline-block';
+                    }
+                    if (currentProduct['Image-3'] && currentProduct['Image-3'].trim() !== "") {
+                        const img3 = document.getElementById('pd-gallery-3');
+                        img3.src = currentProduct['Image-3'].trim();
+                        img3.style.display = 'inline-block';
+                    }
+
+                    // Kiểm tra và lấy link video
+                    if (currentProduct['Video-URL'] && currentProduct['Video-URL'].trim() !== "") {
+                        currentVideoLink = currentProduct['Video-URL'].trim();
+                        const videoContainer = document.getElementById('pd-video-container');
+                        const videoImg = document.getElementById('pd-video-img');
+
+                        let coverImgUrl = mainImageSrc;
+
+                        // Tạo ảnh cover tự động nếu là link Youtube
+                        if (currentVideoLink.includes('youtube.com/watch?v=')) {
+                            const ytId = currentVideoLink.split('v=')[1].split('&')[0];
+                            coverImgUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+                        } else if (currentVideoLink.includes('youtu.be/')) {
+                            const ytId = currentVideoLink.split('youtu.be/')[1].split('?')[0];
+                            coverImgUrl = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+                        }
+
+                        videoImg.src = coverImgUrl;
+                        videoContainer.style.display = 'inline-block';
+                    }
+
+                    // KHỞI ĐỘNG CHẠY THỬ SLIDESHOW SAU KHI HTML ĐÃ RENDER XONG
+                    setTimeout(() => {
+                        // Chỉ gom những thumbnail ảnh thực tế hiển thị (loại bỏ ảnh trống mang thuộc tính display: none)
+                        visibleImages = Array.from(document.querySelectorAll('.thumb-img'))
+                            .filter(img => img.style.display !== 'none');
+                        if (visibleImages.length > 1) {
+                            startAutoSlide();
+                        }
+                    }, 500);
+
+                } else {
+                    document.getElementById('pd-name').innerText = "Sản phẩm không tồn tại hoặc đã ngừng kinh doanh!";
+                }
+            }
+        });
+
+        // Tạm dừng chạy slide khi hover chuột vào vùng ảnh lớn để người dùng tiện quan sát
+        const mediaDisplay = document.getElementById('main-media-display');
+        mediaDisplay.addEventListener('mouseenter', stopAutoSlide);
+        mediaDisplay.addEventListener('mouseleave', () => {
+            // Chỉ chạy tiếp slideshow nếu người dùng không mở xem video
+            if (!isVideoPlaying) startAutoSlide();
+        });
+
+    });
+</script>
